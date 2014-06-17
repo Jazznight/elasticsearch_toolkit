@@ -1,0 +1,19 @@
+{
+    "properties" : {
+        "crawler_ver" : {
+            "type" : "string"
+        },
+        "device" : {
+            "properties" : {
+                "general_model" : {
+                    "type" : "string",
+                    "search_analyzer": "device_length_analyzer"
+                }
+            }
+        },
+        "search_alias" : {
+            "type" : "string",
+            "search_analyzer": "device_length_analyzer"
+        }
+    }
+}
