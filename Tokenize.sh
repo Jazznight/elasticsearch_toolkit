@@ -18,4 +18,4 @@ then
 fi
 
 #curl -i -XGET 'http://localhost:9200/device_mongo/models/_search?pretty' -d "
-curl -i -XGET "http://localhost:9200/$1/_analyze?field=b_raw&pretty$ANALYZER" -d "$1"
+curl -i -XGET "http://localhost:9200/$1/_analyze?field=b_raw&pretty$ANALYZER" -d "$2"
