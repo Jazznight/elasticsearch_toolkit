@@ -2,24 +2,42 @@
     "analysis" : {
         "analyzer" : {
             "device_length_analyzer" : {
-                "tokenizer" : "device_length_tokenizer",
-                "filter": ["device_length_filter", "lcase_filter", "device_delimiter_filter"]
+                "tokenizer" : "engram_model_tokenizer",
+                "filter": ["length_filter", "lcase_filter", "model_delimiter_filter"]
             },
             "model_analyzer" : {
                 "tokenizer" : "whitespace",
                 "filter": ["lcase_filter", "model_delimiter_filter"]
+            },
+            "ngram_model_analyzer" : {
+                "tokenizer" : "ngram_model_tokenizer",
+                "filter": ["length_filter", "lcase_filter", "model_delimiter_filter"]
+            },
+            "engram_model_analyzer" : {
+                "tokenizer" : "engram_model_tokenizer",
+                "filter": ["length_filter", "lcase_filter", "model_delimiter_filter"]
+            },
+            "ex_short_analyzer" : {
+                "tokenizer" : "standard",
+                "filter" : ["length_filter", "lcase_filter"]
             }
         },
         "tokenizer" : {
-            "device_length_tokenizer" : {
+            "ngram_model_tokenizer" : {
+                "type" : "nGram",
+                "min_gram" : "2",
+                "max_gram" : "3",
+                "token_chars": [ "letter", "digit" ]
+            },
+            "engram_model_tokenizer" : {
                 "type" : "edgeNGram",
                 "min_gram" : "3",
-                "max_gram" : "20",
+                "max_gram" : "15",
                 "token_chars": [ "letter", "digit" ]
             }
         },
         "filter": {
-            "device_length_filter" : {
+            "length_filter" : {
                 "type" : "length",
                 "min" : 2,
                 "max" : 15
@@ -27,7 +45,7 @@
             "lcase_filter" : {
                 "type" : "lowercase"
             },
-            "device_delimiter_filter" : {
+            "word_delimiter_restore" : {
                 "type" : "word_delimiter",
                 "generate_word_parts" : "false",
                 "generate_number_parts" : "false",
