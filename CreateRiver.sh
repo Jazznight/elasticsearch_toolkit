@@ -30,12 +30,3 @@ curl -XPUT "localhost:9200/_river/$RIVER/_meta" -d"
         \"type\": \"$MODEL\"
     }
 }"
-
-
-curl -XPUT 'http://localhost:9200/_snapshot/device_elasticsearch_snapshot' -d '{
-    "type": "fs",
-    "settings": {
-        "location": "/tmp/device_elasticsearch_snapshot",
-        "compress": true
-    }
-}'
