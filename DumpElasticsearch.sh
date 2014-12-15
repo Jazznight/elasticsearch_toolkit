@@ -31,8 +31,10 @@ curl -XPUT "localhost:9200/_snapshot/tmp_elasticsearch_snapshot/snapshot_1" -d "
     \"include_global_state\": false
 }"
 
-tar cf $TAR_FILE tmp_elasticsearch_snapshot
+
+tar cvf "$TAR_FILE" tmp_elasticsearch_snapshot/
 gzip $TAR_FILE
+
 mv $TAR_FILE.gz $MY_DIR/$TAR_FILE.gz
 if [ $? -eq 0 ];
 then
