@@ -1,0 +1,52 @@
+{
+    "properties" : {
+        "tid" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        },
+        "fid" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        },
+        "authorid" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        },
+        "displayorder" : {
+            "type" : "boolean",
+            "index" : "not_analyzed"
+        },
+        "digest" : {
+            "type" : "boolean",
+            "index" : "not_analyzed"
+        },
+        "special" : {
+            "type" : "short",
+            "index" : "not_analyzed"
+        },
+        "views" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        },
+        "replies" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        },
+        "dateline" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        },
+        "subject" : {
+            "type" : "string",
+            "analyzer" : "ik_max_word"
+        },
+        "message" : {
+            "type" : "string",
+            "analyzer" : "ik_max_word"
+        },
+        "lastpost" : {
+            "type" : "integer",
+            "index" : "not_analyzed"
+        }
+    }
+}
